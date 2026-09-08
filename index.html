@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5 Ultimate Master Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JLPT N5 Master Hub</h1>
+        <p>Minna no Nihongo & Complete Kanji Prep</p>
+    </header>
+
+    <nav>
+        <button class="tab-btn active" onclick="switchTab('home')">Home & Tracker</button>
+        <button class="tab-btn" onclick="switchTab('kanji')">Kanji List</button>
+        <button class="tab-btn" onclick="switchTab('vocab')">Vocabulary</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">Grammar Patterns</button>
+        <button class="tab-btn" onclick="switchTab('renshuu')">Renshuu (Practice)</button>
+    </nav>
+
+    <main>
+        <!-- HOME TAB -->
+        <section id="home" class="tab-content active">
+            <h2>N5 Preparation Dashboard</h2>
+            <div class="tracker-card">
+                <p>Overall N5 Completion Progress:</p>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar">0%</div>
+                </div>
+                <button onclick="updateProgress(10)">Mark Daily Progress (+10%)</button>
+                <button onclick="resetProgress()" class="reset-btn">Reset</button>
+            </div>
+            <p style="margin-top: 20px;">Welcome! Use the navigation menu above to jump into Kanji, Vocab, Grammar rules, and Renshuu practice exercises based on Minna no Nihongo.</p>
+        </section>
+
+        <!-- KANJI TAB -->
+        <section id="kanji" class="tab-content">
+            <h2>Kanji Master List (1-162)</h2>
+            <input type="text" id="kanjiSearch" placeholder="Search by Romaji, Kanji, or Meaning..." onkeyup="filterKanji()">
+            <div id="kanjiContainer" class="grid-container"></div>
+        </section>
+
+        <!-- VOCABULARY TAB -->
+        <section id="vocab" class="tab-content">
+            <h2>Minna no Nihongo Vocabulary</h2>
+            <input type="text" id="vocabSearch" placeholder="Search vocabulary (Romaji/Meaning)..." onkeyup="filterVocab()">
+            <div id="vocabContainer" class="grid-container"></div>
+        </section>
+
+        <!-- GRAMMAR TAB -->
+        <section id="grammar" class="tab-content">
+            <h2>Grammar Patterns (Lessons 1 - 25)</h2>
+            <div id="grammarContainer"></div>
+        </section>
+
+        <!-- RENSHUU TAB -->
+        <section id="renshuu" class="tab-content">
+            <h2>Lesson-wise Practice (Renshuu A, B, C & Mondai)</h2>
+            <div id="renshuuContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built for JLPT N5 Aspirants 🚀</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
